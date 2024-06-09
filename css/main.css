@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --background-img: var("");
+  --bg: #f9f7f2;
+  --green: #e6ff2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  font-family: "Raleway", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  margin: 0 auto;
+  width: min(75rem, 100%);
+  padding: 0 1rem;
+}
+
+header {
+  background: #0b4650;
+  color: var(--bg);
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 4rem;
+
+  @media screen and (min-width: 76rem) {
+    font-size: 3rem;
+  }
+}
+
+header h1 {
+  margin: 0;
+}
+
+main h2 {
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    outline: none;
+    border: none;
+    color: var(--green);
+    background: #0b4650;
+    border-radius: 5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+
+    &:hover {
+      transform: scale(0.95);
+      transition: 0.3s;
+    }
+  }
+}
+
+#cards {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+
+  @media screen and (min-width: 37.5rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 48rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (min-width: 76rem) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: var(--background-img) no-repeat center center/cover,
+    linear-gradient(to right, #898a8d 0%, #898a8d 100%);
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(0.95);
+    transition: 0.3s;
+  }
+}
+
+.card__content {
+  backdrop-filter: blur(2rem);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  pointer-events: none;
+}
+
+.card__title,
+.card__text {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  color: var(--bg);
+  font-weight: 700;
+}
+
+.card__text {
+  font-size: 1rem;
+  font-weight: 400;
+}
